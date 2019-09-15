@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using BradyStarcherTodo.Models;
 
 namespace BradyStarcherTodo.Data
 {
@@ -12,5 +13,6 @@ namespace BradyStarcherTodo.Data
             : base(options)
         {
         }
+        public DbSet<BradyStarcherTodo.Models.TodoItem> TodoItem { get; set; }
     }
 }
