@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using BradyStarcherTodo.Services;
+using BradyStarcherTodo.Models;
 
 namespace BradyStarcherTodo.Controllers
 {
@@ -14,11 +15,18 @@ namespace BradyStarcherTodo.Controllers
         public TodoController(ITodoItemService todoItemService)
         {
             _todoItemService = todoItemService;
-        }
+        }
 
-        public IActionResult Index()
+
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var items = await _todoItemService.GetIncompleteItemsAsync();
+
+            var model = new TodoViewModel()
+            {
+                Items = items
+            };
+            return View(model);
         }
     }
 }
