@@ -8,7 +8,7 @@ namespace BradyStarcherTodo.Models
 {
     public class TodoItem
     {
-            public Guid ID { get; set; }
+            public Guid Id { get; set; }
 
             public bool IsDone { get; set; }
 
