@@ -3,16 +3,14 @@ using System;
 using BradyStarcherTodo.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace BradyStarcherTodo.Migrations
+namespace BradyStarcherTodo.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20190930163436_TodoItem")]
-    partial class TodoItem
+    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
